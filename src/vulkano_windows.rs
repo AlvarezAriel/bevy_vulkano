@@ -384,14 +384,14 @@ fn window_descriptor_to_vulkano_window_descriptor(
     };
     window_descriptor.scale_factor_override = wd.resolution.scale_factor_override();
     window_descriptor.title = wd.title.clone();
-    window_descriptor.present_mode = match wd.present_mode {
-        PresentMode::Fifo => vulkano::swapchain::PresentMode::Fifo,
-        PresentMode::Immediate => vulkano::swapchain::PresentMode::Immediate,
-        PresentMode::Mailbox => vulkano::swapchain::PresentMode::Mailbox,
-        PresentMode::AutoNoVsync => vulkano::swapchain::PresentMode::Immediate,
-        PresentMode::AutoVsync => vulkano::swapchain::PresentMode::FifoRelaxed,
-        PresentMode::FifoRelaxed => vulkano::swapchain::PresentMode::FifoRelaxed,
-    };
+    // window_descriptor.present_mode = match wd.present_mode {
+    //     PresentMode::Fifo => vulkano::swapchain::PresentMode::Fifo,
+    //     PresentMode::Immediate => vulkano::swapchain::PresentMode::Immediate,
+    //     PresentMode::Mailbox => vulkano::swapchain::PresentMode::Mailbox,
+    //     PresentMode::AutoNoVsync => vulkano::swapchain::PresentMode::Immediate,
+    //     PresentMode::AutoVsync => vulkano::swapchain::PresentMode::FifoRelaxed,
+    //     PresentMode::FifoRelaxed => vulkano::swapchain::PresentMode::FifoRelaxed,
+    // };
     window_descriptor.resizable = wd.resizable;
     window_descriptor.decorations = wd.decorations;
     window_descriptor.cursor_visible = wd.cursor.visible;
